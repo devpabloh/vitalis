@@ -1,17 +1,17 @@
-import { useContext } from "react";
-import { ThemeContext } from "../contexts/theme/themeContext";
+import { useContext } from 'react';
+import { ThemeContext } from '../contexts/theme/themeContext';
 
-export function useTheme(){
-    const context = useContext(ThemeContext)
+export function useTheme() {
+  const context = useContext(ThemeContext);
 
-    if(!context){
-        throw new Error ("UseTheme deve ser usado dentro de um ThemeProvider")
-    }
+  if (!context) {
+    throw new Error('UseTheme deve ser usado dentro de um ThemeProvider');
+  }
 
-    return context
+  return context;
 }
 
-// porque nós criamos um hook personalizado após criar um contexto e um provider ? para que possamos acessar o contexto de forma mais fácil e limpa em nossos componentes. Ao invés de importar o useContext e o ThemeContext toda vez que quisermos acessar o tema, podemos simplesmente usar o hook useTheme, que já encapsula essa lógica para nós. Isso torna nosso código mais legível e reduz a chance de erros, como esquecer de verificar se o contexto está definido antes de usá-lo.  
+// porque nós criamos um hook personalizado após criar um contexto e um provider ? para que possamos acessar o contexto de forma mais fácil e limpa em nossos componentes. Ao invés de importar o useContext e o ThemeContext toda vez que quisermos acessar o tema, podemos simplesmente usar o hook useTheme, que já encapsula essa lógica para nós. Isso torna nosso código mais legível e reduz a chance de erros, como esquecer de verificar se o contexto está definido antes de usá-lo.
 
 // para utilizar esse hook em um componente, basta importá-lo e chamá-lo dentro do corpo do componente. Por exemplo:
 
