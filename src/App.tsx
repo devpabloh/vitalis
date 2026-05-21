@@ -1,16 +1,23 @@
-import { useTheme } from './hook/useTheme';
+import { Header } from './components/Header';
+import { Hero } from './components/Hero';
+import { Stats } from './components/Stats';
+import { About } from './components/About';
+import { Services } from './components/Services';
+import { Process } from './components/Process';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
 
-function App() {
-  const { theme, toggleTheme } = useTheme();
-
+export default function App() {
   return (
-    <>
-      <h1 className="text-red-500">
-        Aqui está funcionando, eu não sei se está funcionando ai {theme}
-      </h1>
-      <button onClick={toggleTheme}>Trocar Tema</button>
-    </>
+    <div className="font-sans antialiased">
+      <Header />
+      <Hero />
+      <Stats />
+      <About />
+      <Services />
+      <Process />
+      <Contact />
+      <Footer />
+    </div>
   );
 }
-
-export default App;

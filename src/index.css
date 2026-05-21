@@ -1,9 +1,127 @@
-@import 'tailwindcss' body.light {
-  background-color: #ffffff !important;
-  color: #000000 !important;
+@import 'tailwindcss';
+
+@theme {
+  --color-vitalis-green: #5cb330;
+  --color-vitalis-green-dark: #4a9226;
+  --color-vitalis-green-light: #7dd44f;
+  --color-vitalis-orange: #f7931e;
+  --color-vitalis-orange-dark: #d97a0e;
+  --color-vitalis-blue: #1b75bb;
+  --color-vitalis-dark: #3d4a5c;
+  --color-vitalis-gray: #6b7a8d;
+  --color-vitalis-light: #f5faf0;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-body.dark {
-  background-color: #000000 !important;
-  color: #ffffff !important;
+html {
+  scroll-behavior: smooth;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #3d4a5c;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #5cb330;
+  border-radius: 3px;
+}
+
+/* ── Keyframes ───────────────────────────────────────── */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes heroEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Animation utilities ─────────────────────────────── */
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+.hero-enter {
+  animation: heroEnter 0.8s ease-out both;
+}
+
+/* ── Scroll reveal ───────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s ease-out,
+    transform 0.65s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition:
+    opacity 0.65s ease-out,
+    transform 0.65s ease-out;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition:
+    opacity 0.65s ease-out,
+    transform 0.65s ease-out;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Gradient text ───────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #5cb330 0%, #1b75bb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-warm {
+  background: linear-gradient(135deg, #f7931e 0%, #5cb330 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
