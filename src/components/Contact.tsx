@@ -3,9 +3,9 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { cn } from '../lib/utils';
 
 const info = [
-  { icon: '📧', label: 'Email', value: 'contato@vitalis.com.br' },
-  { icon: '📱', label: 'WhatsApp', value: '(11) 99999-9999' },
-  { icon: '📍', label: 'Atendimento', value: 'São Paulo e Região' },
+  { icon: '📧', label: 'Email', value: ' vitalisatividadefisicaesaude@gmail.com' },
+  { icon: '📱', label: 'WhatsApp', value: '(81) 99679-1511' },
+  { icon: '📍', label: 'Atendimento', value: 'Recife e Região' },
   { icon: '⏰', label: 'Horário', value: 'Seg–Sex: 8h–18h' },
 ];
 
@@ -107,7 +107,7 @@ export function Contact() {
                     <label className="text-xs font-semibold text-vitalis-dark uppercase tracking-wider mb-2 block">
                       Telefone
                     </label>
-                    <input type="tel" placeholder="(11) 99999-9999" className={inputClass} />
+                    <input type="tel" placeholder="(81) 99999-9999" className={inputClass} />
                   </div>
                 </div>
 

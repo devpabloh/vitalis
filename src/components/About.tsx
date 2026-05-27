@@ -1,5 +1,6 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { cn } from '../lib/utils';
+import professora from "../assets/professoraAna.png"
 
 const highlights = [
   'Redução de até 40% nos afastamentos por doenças ocupacionais',
@@ -21,21 +22,12 @@ export function About() {
             <div className="relative z-10 bg-vitalis-light rounded-3xl overflow-hidden p-8">
               {/* Photo placeholder */}
               <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-vitalis-green/20 to-vitalis-blue/10 flex items-center justify-center mb-6">
-                <div className="text-center">
-                  <div className="w-28 h-28 rounded-full bg-vitalis-green/20 mx-auto flex items-center justify-center mb-3">
-                    <svg viewBox="0 0 64 80" fill="#5CB330" className="w-16 h-20">
-                      <circle cx="32" cy="15" r="12" />
-                      <path d="M32 29C18 29 10 39 10 51H54C54 39 46 29 32 29Z" opacity="0.85" />
-                    </svg>
-                  </div>
-                  <p className="text-vitalis-gray text-sm font-medium">Profissional de Educação Física</p>
-                  <p className="text-vitalis-green text-xs font-bold mt-1">CREF • Especialista Laboral</p>
-                </div>
+                <img src={professora} alt="Foto da professora Ana" className='w-80' />
               </div>
 
               {/* Cert badges */}
               <div className="grid grid-cols-2 gap-2.5">
-                {['CREF Registrada', 'Pós-Graduada', 'Ergonomia Laboral', '+8 Anos de Exp.'].map(
+                {['CREF Registrada', 'Pós-Graduada', 'Ergonomia Laboral', '+15 Anos de Exp.'].map(
                   (c) => (
                     <div
                       key={c}
@@ -66,7 +58,7 @@ export function About() {
             </h2>
 
             <p className="text-vitalis-gray leading-relaxed">
-              Com mais de 8 anos dedicados à saúde corporativa, desenvolvo programas personalizados
+              Com mais de 15 anos dedicados à saúde corporativa, desenvolvo programas personalizados
               que transformam ambientes de trabalho em espaços de bem-estar, energia e qualidade de
               vida.
             </p>

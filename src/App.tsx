@@ -6,6 +6,7 @@ import { Services } from './components/Services';
 import { Process } from './components/Process';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { FloatingContact } from './components/FloatingContact';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <Process />
       <Contact />
       <Footer />
+      <FloatingContact />
     </div>
   );
 }
