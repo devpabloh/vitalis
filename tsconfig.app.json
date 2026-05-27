@@ -5,6 +5,7 @@
     "lib": ["ES2023", "DOM"],
     "module": "esnext",
     "skipLibCheck": true,
+    "types": ["vitest/globals"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
