@@ -1,3 +1,5 @@
+import professora from '../assets/professoraAna.png'
+
 export function Hero() {
   return (
     <section
@@ -92,18 +94,8 @@ export function Hero() {
               style={{ animationDelay: '0.4s' }}
             />
             {/* Main circle */}
-            <div className="absolute inset-10 rounded-full bg-vitalis-green flex items-center justify-center shadow-2xl">
-              <svg viewBox="0 0 80 100" fill="white" className="w-24 h-28">
-                <circle cx="40" cy="14" r="12" />
-                <path d="M40 28C28 28 20 36 20 46l2 17-8 28h13l7-22h12l7 22h13l-8-28 2-17c0-10-8-18-20-18z" />
-                <path
-                  d="M20 46L6 38M60 46L74 38"
-                  stroke="white"
-                  strokeWidth="7"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-              </svg>
+            <div className="absolute inset-10 rounded-full bg-vitalis-green flex items-center justify-center shadow-2xl overflow-hidden">
+              <img src={professora} alt="Foto da Profissional Ana" className='w-50 object-cover' />
             </div>
           </div>
 
