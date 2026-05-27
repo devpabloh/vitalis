@@ -1,6 +1,7 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { cn } from '../lib/utils';
 import professora from "../assets/professoraAna.png"
+import info from "../data/info.json"
 
 const highlights = [
   'Redução de até 40% nos afastamentos por doenças ocupacionais',
@@ -27,7 +28,7 @@ export function About() {
 
               {/* Cert badges */}
               <div className="grid grid-cols-2 gap-2.5">
-                {['CREF Registrada', 'Pós-Graduada', 'Ergonomia Laboral', '+15 Anos de Exp.'].map(
+                {[info.cref, 'Pós-Graduada', 'Ergonomia Laboral', `+${info.experiencia} Anos de Exp.`].map(
                   (c) => (
                     <div
                       key={c}

@@ -1,13 +1,8 @@
 import { useState } from 'react';
 import { cn } from '../lib/utils';
-import professoraContato from '../assets/professoraAnaChat.png'
-import professoraContatoMostrar from '../assets/professoraAnaChatMostrar.png'
-
-// Formato internacional do WhatsApp: código do país (55) + DDD + número, sem espaços ou símbolos
-const WHATSAPP_URL = 'https://wa.me/5581996791511';
-
-// mailto: é um protocolo nativo do navegador que abre o cliente de e-mail padrão
-const EMAIL_URL = 'mailto:contato@vitalis.com.br';
+import professoraContato from '../assets/professoraAnaAtendendoTelefone-removebg-preview.png'
+import professoraContatoMostrar from '../assets/professoraAnaMostrandoChat-removebg-preview.png'
+import info from "../data/info.json"
 
 export function FloatingContact() {
   // Um único estado booleano controla se o menu está aberto ou fechado
@@ -35,12 +30,29 @@ export function FloatingContact() {
       */}
       <div
         className={cn(
-          'absolute bottom-[70%] right-10 flex flex-col items-end gap-3 transition-all duration-300',
+          'absolute bottom-[55%] right-40 flex flex-col items-end gap-3 transition-all duration-300 z-10',
           isOpen
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 translate-y-4 pointer-events-none',
         )}
       >
+         <a href={info.instagram}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Ver Instagram"
+  className="flex items-center gap-3 group"
+>
+  <span className="bg-white text-vitalis-dark text-sm font-medium px-3 py-1.5 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+    Instagram
+  </span>
+  <div className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+    style={{ background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' }}
+  >
+    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+    </svg>
+  </div>
+</a>
         {/* WhatsApp */}
         {/*
           target="_blank" abre em nova aba
@@ -49,7 +61,7 @@ export function FloatingContact() {
             - noreferrer → não envia o endereço da sua página para o destino
         */}
         <a
-          href={WHATSAPP_URL}
+          href={info.linkWhatsapp}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Falar pelo WhatsApp"
@@ -73,7 +85,7 @@ export function FloatingContact() {
 
         {/* Email */}
         <a
-          href={EMAIL_URL}
+          href={info.linkEmail}
           aria-label="Enviar e-mail"
           className="flex items-center gap-3 group"
         >
@@ -108,18 +120,18 @@ export function FloatingContact() {
           isOpen ? imagemAberta : imagemFechada
           → React re-renderiza e troca o src automaticamente ao mudar o estado
       */}
-      <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-label={isOpen ? 'Fechar opções de contato' : 'Abrir opções de contato'}
-        aria-expanded={isOpen}
-        className="bg-transparent border-none p-0 cursor-pointer hover:scale-105 transition-transform duration-300"
-      >
-        <img
+      <img
           src={isOpen ? professoraContatoMostrar : professoraContato}
           alt={isOpen ? 'Professora mostrando opções de contato' : 'Professora disponível para contato'}
-          className="w-32 md:w-50 h-auto drop-shadow-xl"
+          onClick={() => setIsOpen((prev) => !prev)}
+          role='button'
+          aria-label={isOpen ? 'Fechar opções de contato' : 'Abrir opções de contato'}
+          aria-expanded={isOpen}
+          tabIndex={0}
+          onKeyDown={(e) => e.key === 'Enter' && setIsOpen((prev) => !prev)}
+          className="w-32 md:w-50 h-auto drop-shadow-xl cursor-pointer hover:scale-105 transition-transform duration-300"
+          style={{ WebkitTapHighlightColor: 'transparent' }}
         />
-      </button>
       </div>
     </div>
   );

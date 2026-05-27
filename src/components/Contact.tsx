@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { cn } from '../lib/utils';
+import info from "../data/info.json"
 
-const info = [
-  { icon: '📧', label: 'Email', value: ' vitalisatividadefisicaesaude@gmail.com' },
-  { icon: '📱', label: 'WhatsApp', value: '(81) 99679-1511' },
+const contactInfo = [
+  { icon: '📧', label: 'Email', value: info.email },
+  { icon: '📱', label: 'WhatsApp', value: info.whatsapp },
   { icon: '📍', label: 'Atendimento', value: 'Recife e Região' },
   { icon: '⏰', label: 'Horário', value: 'Seg–Sex: 8h–18h' },
 ];
@@ -42,7 +43,7 @@ export function Contact() {
         <div className="grid md:grid-cols-5 gap-10 items-start">
           {/* Info */}
           <div className={cn('md:col-span-2 space-y-4 reveal-left', isVisible && 'visible')}>
-            {info.map((item) => (
+            {contactInfo.map((item) => (
               <div
                 key={item.label}
                 className="flex items-start gap-4 bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"

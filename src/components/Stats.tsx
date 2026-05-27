@@ -1,12 +1,13 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useCounter } from '../hooks/useCounter';
 import { cn } from '../lib/utils';
+import info from "../data/info.json"
 
 const items = [
-  { n: 500, suffix: '+', label: 'Empresas Atendidas', icon: '🏢' },
-  { n: 10000, suffix: '+', label: 'Colaboradores Beneficiados', icon: '👥' },
-  { n: 8, suffix: '+', label: 'Anos de Experiência', icon: '🏆' },
-  { n: 95, suffix: '%', label: 'Taxa de Satisfação', icon: '⭐' },
+  { n: info.quantidadeDeEmpresasParceiras, suffix: '+', label: 'Empresas Atendidas', icon: '🏢' },
+  { n: info.colaboradoresImpactados, suffix: '+', label: 'Colaboradores Beneficiados', icon: '👥' },
+  { n: info.experiencia, suffix: '+', label: 'Anos de Experiência', icon: '🏆' },
+  { n: info.satisfacaoDosClientes, suffix: '%', label: 'Taxa de Satisfação', icon: '⭐' },
 ];
 
 function StatItem({

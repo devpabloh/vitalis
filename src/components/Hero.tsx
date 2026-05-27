@@ -1,4 +1,5 @@
 import professora from '../assets/professoraAna.png'
+import info from '../data/info.json'
 
 export function Hero() {
   return (
@@ -76,7 +77,7 @@ export function Hero() {
               ))}
             </div>
             <span className="text-sm text-vitalis-gray">
-              <span className="font-bold text-vitalis-dark">+500 empresas</span> confiam na Vitalis
+              <span className="font-bold text-vitalis-dark">+ {info.quantidadeDeEmpresasParceiras} empresas</span> confiam na Vitalis
             </span>
           </div>
         </div>
@@ -109,7 +110,7 @@ export function Hero() {
             </div>
             <div>
               <div className="text-xs text-vitalis-gray leading-none mb-0.5">Colaboradores</div>
-              <div className="font-black text-vitalis-dark">+10.000</div>
+              <div className="font-black text-vitalis-dark">+ {info.colaboradoresImpactados}</div>
             </div>
           </div>
 
@@ -122,7 +123,7 @@ export function Hero() {
             </div>
             <div>
               <div className="text-xs text-vitalis-gray leading-none mb-0.5">Satisfação</div>
-              <div className="font-black text-vitalis-dark">95%</div>
+              <div className="font-black text-vitalis-dark">{info.satisfacaoDosClientes}%</div>
             </div>
           </div>
 
@@ -135,7 +136,7 @@ export function Hero() {
             </div>
             <div>
               <div className="text-xs text-vitalis-gray leading-none mb-0.5">Empresas</div>
-              <div className="font-black text-vitalis-dark">+500</div>
+              <div className="font-black text-vitalis-dark">+ {info.quantidadeDeEmpresasParceiras}</div>
             </div>
           </div>
         </div>
