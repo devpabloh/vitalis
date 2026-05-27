@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { cn } from '../lib/utils';
+import vitalisLogo from '../assets/logo-vitalis.png'
 
 const links = [
   { label: 'Início', href: '#inicio' },
@@ -29,12 +30,7 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-5 flex items-center justify-between">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-full bg-vitalis-green flex items-center justify-center shadow transition-transform group-hover:scale-110">
-            <svg viewBox="0 0 32 32" fill="white" className="w-5 h-5">
-              <circle cx="16" cy="7" r="5" />
-              <path d="M16 13c-4 0-7 3-7 7v1h4l2 9h2l2-9h4v-1c0-4-3-7-7-7z" />
-            </svg>
-          </div>
+          <img src={vitalisLogo} alt="logo da empresa vitalis, que se encontra no todo da aplicação" className='w-9' />
           <div className="leading-none">
             <span className="block font-black text-lg tracking-tight text-vitalis-dark">
               VITALIS
