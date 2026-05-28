@@ -50,7 +50,7 @@ export function Testimonials() {
   const { ref, isVisible } = useScrollAnimation<HTMLElement>();
 
   return (
-    <section id="depoimentos" ref={ref} className="py-24 bg-white">
+    <section id="depoimentos" ref={ref} className="py-16 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-5">
 
         {/* Header */}
@@ -58,7 +58,7 @@ export function Testimonials() {
           <span className="inline-flex items-center gap-2 bg-vitalis-orange/10 text-vitalis-orange text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
             Depoimentos
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-vitalis-dark">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-vitalis-dark">
             O que nossos <span className="gradient-text-warm">clientes</span> dizem
           </h2>
           <p className="text-vitalis-gray max-w-lg mx-auto leading-relaxed">
@@ -67,7 +67,7 @@ export function Testimonials() {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <div
               key={i}

@@ -29,14 +29,14 @@ export function Process() {
   const { ref, isVisible } = useScrollAnimation<HTMLElement>();
 
   return (
-    <section id="como-funciona" ref={ref} className="py-24 bg-white">
+    <section id="como-funciona" ref={ref} className="py-16 md:py-24 bg-white">
       <div className="max-w-5xl mx-auto px-5">
         {/* Header */}
         <div className={cn('text-center mb-16 space-y-4 reveal', isVisible && 'visible')}>
           <span className="inline-flex items-center gap-2 bg-vitalis-blue/10 text-vitalis-blue text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
             Como Funciona
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-vitalis-dark">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-vitalis-dark">
             Processo{' '}
             <span className="gradient-text">simples e eficaz</span>
           </h2>

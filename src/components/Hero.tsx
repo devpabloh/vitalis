@@ -30,22 +30,22 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-5 pt-28 pb-20 grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-5 pt-24 md:pt-28 pb-16 md:pb-20 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Text */}
-        <div className="space-y-7 hero-enter">
+        <div className="space-y-6 md:space-y-7 hero-enter">
           <span className="inline-flex items-center gap-2 bg-vitalis-green/10 text-vitalis-green text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
             <span className="w-1.5 h-1.5 rounded-full bg-vitalis-green animate-pulse" />
             Ginástica Laboral &amp; Saúde Corporativa
           </span>
 
-          <h1 className="text-5xl md:text-6xl font-black text-vitalis-dark leading-[1.05] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-vitalis-dark leading-[1.1] md:leading-[1.05] tracking-tight">
             Equipe mais{' '}
             <span className="gradient-text">saudável</span>
             ,{' '}empresa mais{' '}
             <span className="gradient-text-warm">produtiva</span>
           </h1>
 
-          <p className="text-vitalis-gray text-lg leading-relaxed max-w-md">
+          <p className="text-vitalis-gray text-base md:text-lg leading-relaxed max-w-md">
             Programas personalizados de ginástica laboral e bem-estar corporativo para reduzir
             afastamentos, melhorar o clima organizacional e aumentar a performance da sua equipe.
           </p>
@@ -53,13 +53,13 @@ export function Hero() {
           <div className="flex flex-wrap gap-3">
             <a
               href="#contato"
-              className="bg-vitalis-green text-white font-bold px-8 py-4 rounded-full hover:bg-vitalis-green-dark transition-all hover:shadow-xl hover:-translate-y-1"
+              className="bg-vitalis-green text-white font-bold px-6 md:px-8 py-3.5 md:py-4 text-sm md:text-base rounded-full hover:bg-vitalis-green-dark transition-all hover:shadow-xl hover:-translate-y-1"
             >
               Quero Começar
             </a>
             <a
               href="#servicos"
-              className="border-2 border-vitalis-green/30 text-vitalis-dark font-bold px-8 py-4 rounded-full hover:border-vitalis-green hover:text-vitalis-green transition-all"
+              className="border-2 border-vitalis-green/30 text-vitalis-dark font-bold px-6 md:px-8 py-3.5 md:py-4 text-sm md:text-base rounded-full hover:border-vitalis-green hover:text-vitalis-green transition-all"
             >
               Ver Serviços
             </a>
@@ -87,7 +87,7 @@ export function Hero() {
           className="relative flex justify-center items-center hero-enter"
           style={{ animationDelay: '0.25s' }}
         >
-          <div className="relative w-72 h-72 md:w-80 md:h-80">
+          <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
             {/* Rings */}
             <div className="absolute inset-0 rounded-full border-2 border-vitalis-green/20 animate-float" />
             <div
@@ -128,7 +128,7 @@ export function Hero() {
           </div>
 
           <div
-            className="absolute top-1/2 -translate-y-1/2 -left-8 md:-left-16 bg-white rounded-2xl shadow-xl p-3 flex items-center gap-3 animate-float"
+            className="absolute top-1/2 -translate-y-1/2 -left-8 md:-left-16 bg-white rounded-2xl shadow-xl p-3 hidden sm:flex items-center gap-3 animate-float"
             style={{ animationDelay: '0.8s' }}
           >
             <div className="w-10 h-10 bg-vitalis-green/15 rounded-xl flex items-center justify-center text-lg">

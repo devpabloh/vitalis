@@ -150,14 +150,14 @@ export function Services() {
   const { ref, isVisible } = useScrollAnimation<HTMLElement>();
 
   return (
-    <section id="servicos" ref={ref} className="py-24 bg-vitalis-light">
+    <section id="servicos" ref={ref} className="py-16 md:py-24 bg-vitalis-light">
       <div className="max-w-6xl mx-auto px-5">
         {/* Header */}
         <div className={cn('text-center mb-16 space-y-4 reveal', isVisible && 'visible')}>
           <span className="inline-flex items-center gap-2 bg-vitalis-green/10 text-vitalis-green text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
             Nossos Serviços
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-vitalis-dark">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-vitalis-dark">
             Soluções completas para{' '}
             <span className="gradient-text">saúde corporativa</span>
           </h2>

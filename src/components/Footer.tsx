@@ -1,3 +1,5 @@
+import vitalisLogo from '../assets/logo-vitalis.png';
+
 const col = {
   Serviços: ['Ginástica Laboral', 'Avaliação Ergonômica', 'Palestras de Saúde', 'Treinamento Corporativo'],
   Empresa: ['Sobre', 'Como Funciona', 'Contato', 'Solicitar Proposta'],
@@ -7,16 +9,11 @@ export function Footer() {
   return (
     <footer className="bg-vitalis-dark text-white pt-16 pb-8">
       <div className="max-w-6xl mx-auto px-5">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
           {/* Brand */}
-          <div className="md:col-span-2 space-y-5">
+          <div className="sm:col-span-2 md:col-span-2 space-y-5">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full bg-vitalis-green flex items-center justify-center">
-                <svg viewBox="0 0 32 32" fill="white" className="w-5 h-5">
-                  <circle cx="16" cy="7" r="5" />
-                  <path d="M16 13c-4 0-7 3-7 7v1h4l2 9h2l2-9h4v-1c0-4-3-7-7-7z" />
-                </svg>
-              </div>
+              <img src={vitalisLogo} alt="logo da empresa vitalis, que se encontra no todo da aplicação" className='w-9' />
               <div className="leading-none">
                 <span className="block font-black text-lg tracking-tight">VITALIS</span>
                 <span className="block text-[9px] text-white/40 uppercase tracking-widest mt-0.5">

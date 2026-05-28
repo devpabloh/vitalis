@@ -17,7 +17,7 @@ export function Gallery() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <section id="galeria" ref={ref} className="py-24 bg-white">
+    <section id="galeria" ref={ref} className="py-16 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-5">
 
         {/* Header */}
@@ -25,7 +25,7 @@ export function Gallery() {
           <span className="inline-flex items-center gap-2 bg-vitalis-green/10 text-vitalis-green text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
             Galeria
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-vitalis-dark">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-vitalis-dark">
             Momentos em <span className="gradient-text">ação</span>
           </h2>
           <p className="text-vitalis-gray max-w-lg mx-auto leading-relaxed">

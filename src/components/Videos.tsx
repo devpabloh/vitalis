@@ -31,7 +31,7 @@ export function Videos() {
   const [playing, setPlaying] = useState<string | null>(null);
 
   return (
-    <section id="videos" ref={ref} className="py-24 bg-vitalis-light">
+    <section id="videos" ref={ref} className="py-16 md:py-24 bg-vitalis-light">
       <div className="max-w-6xl mx-auto px-5">
 
         {/* Header */}
@@ -39,7 +39,7 @@ export function Videos() {
           <span className="inline-flex items-center gap-2 bg-vitalis-blue/10 text-vitalis-blue text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
             Aulas em Vídeo
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-vitalis-dark">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-vitalis-dark">
             Aprenda com a <span className="gradient-text">Ana</span>
           </h2>
           <p className="text-vitalis-gray max-w-lg mx-auto leading-relaxed">
@@ -48,7 +48,7 @@ export function Videos() {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {videos.map((video, i) => (
             <div
               key={i}

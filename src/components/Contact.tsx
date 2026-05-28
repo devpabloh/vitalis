@@ -3,9 +3,18 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { cn } from '../lib/utils';
 import info from "../data/info.json"
 
-const contactInfo = [
-  { icon: '📧', label: 'Email', value: info.email },
-  { icon: '📱', label: 'WhatsApp', value: info.whatsapp },
+interface ContactItem {
+  icon: string;
+  label: string;
+  value: string;
+  href?: string;
+  external?: boolean;
+}
+
+const contactInfo: ContactItem[] = [
+  { icon: '📧', label: 'Email', value: info.email, href: info.linkEmail },
+  { icon: '📱', label: 'WhatsApp', value: info.whatsapp, href: info.linkWhatsapp, external: true },
+  { icon: '📸', label: 'Instagram', value: `@${info.instagram.split('/').pop()}`, href: info.instagram, external: true },
   { icon: '📍', label: 'Atendimento', value: 'Recife e Região' },
   { icon: '⏰', label: 'Horário', value: 'Seg–Sex: 8h–18h' },
 ];
@@ -23,14 +32,14 @@ export function Contact() {
   }
 
   return (
-    <section id="contato" ref={ref} className="py-24 bg-vitalis-light">
+    <section id="contato" ref={ref} className="py-16 md:py-24 bg-vitalis-light">
       <div className="max-w-5xl mx-auto px-5">
         {/* Header */}
         <div className={cn('text-center mb-14 space-y-4 reveal', isVisible && 'visible')}>
           <span className="inline-flex items-center gap-2 bg-vitalis-green/10 text-vitalis-green text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
             Entre em Contato
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-vitalis-dark">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-vitalis-dark">
             Vamos transformar{' '}
             <span className="gradient-text">sua empresa</span>
           </h2>
@@ -43,24 +52,42 @@ export function Contact() {
         <div className="grid md:grid-cols-5 gap-10 items-start">
           {/* Info */}
           <div className={cn('md:col-span-2 space-y-4 reveal-left', isVisible && 'visible')}>
-            {contactInfo.map((item) => (
-              <div
-                key={item.label}
-                className="flex items-start gap-4 bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <span className="text-2xl">{item.icon}</span>
-                <div>
-                  <p className="text-xs text-vitalis-gray font-medium mb-0.5">{item.label}</p>
-                  <p className="text-vitalis-dark font-semibold text-sm">{item.value}</p>
+            {contactInfo.map((item) =>
+              item.href ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  className="flex items-start gap-4 bg-white rounded-2xl p-4 shadow-sm hover:shadow-md hover:bg-vitalis-green/5 transition-all group"
+                >
+                  <span className="text-2xl">{item.icon}</span>
+                  <div className="min-w-0">
+                    <p className="text-xs text-vitalis-gray font-medium mb-0.5">{item.label}</p>
+                    <p className="text-vitalis-dark font-semibold text-sm group-hover:text-vitalis-green transition-colors truncate">
+                      {item.value}
+                    </p>
+                  </div>
+                </a>
+              ) : (
+                <div
+                  key={item.label}
+                  className="flex items-start gap-4 bg-white rounded-2xl p-4 shadow-sm"
+                >
+                  <span className="text-2xl">{item.icon}</span>
+                  <div>
+                    <p className="text-xs text-vitalis-gray font-medium mb-0.5">{item.label}</p>
+                    <p className="text-vitalis-dark font-semibold text-sm">{item.value}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
 
           {/* Form */}
           <div className={cn('md:col-span-3 reveal-right', isVisible && 'visible')}>
             {sent ? (
-              <div className="bg-white rounded-3xl p-10 text-center shadow-sm">
+              <div className="bg-white rounded-3xl p-8 sm:p-10 text-center shadow-sm">
                 <div className="w-16 h-16 bg-vitalis-green/15 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg
                     className="w-8 h-8 text-vitalis-green"
@@ -76,7 +103,7 @@ export function Contact() {
                 <p className="text-vitalis-gray text-sm">Retornaremos em até 24 horas.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 shadow-sm space-y-5">
+              <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-5 sm:p-8 shadow-sm space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="text-xs font-semibold text-vitalis-dark uppercase tracking-wider mb-2 block">

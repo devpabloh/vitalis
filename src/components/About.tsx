@@ -15,9 +15,9 @@ export function About() {
   const { ref: rightRef, isVisible: rightVis } = useScrollAnimation<HTMLDivElement>();
 
   return (
-    <section id="sobre" className="py-24 bg-white">
+    <section id="sobre" className="py-16 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-5">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Visual */}
           <div ref={leftRef} className={cn('relative reveal-left', leftVis && 'visible')}>
             <div className="relative z-10 bg-vitalis-light rounded-3xl overflow-hidden p-8">
@@ -53,7 +53,7 @@ export function About() {
               Sobre a Profissional
             </span>
 
-            <h2 className="text-4xl font-black text-vitalis-dark leading-tight">
+            <h2 className="text-3xl md:text-4xl font-black text-vitalis-dark leading-tight">
               Saúde corporativa como{' '}
               <span className="gradient-text-warm">filosofia de vida</span>
             </h2>
