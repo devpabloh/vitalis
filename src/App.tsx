@@ -7,6 +7,9 @@ import { Process } from './components/Process';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { FloatingContact } from './components/FloatingContact';
+import { Gallery } from './components/Gallery';
+import { Videos } from './components/Videos';
+import { Testimonials } from './components/Testimonials';
 
 export default function App() {
   return (
@@ -16,6 +19,9 @@ export default function App() {
       <Stats />
       <About />
       <Services />
+      <Gallery /> 
+      <Videos />  
+      <Testimonials />
       <Process />
       <Contact />
       <Footer />
