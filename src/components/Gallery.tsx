@@ -1,15 +1,27 @@
 import { useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { cn } from '../lib/utils';
+import laboralUm from '../assets/Fotos/laboralum.jpeg'
+import laboralDois from '../assets/Fotos/laboralDois.jpeg'
+import laboralTres from '../assets/Fotos/laboralTres.jpeg'
+import laboralQuatro from '../assets/Fotos/laboralQuatro.jpeg'
+import laboralCinco from '../assets/Fotos/laboralCinco.jpeg'
+import laboralSeis from '../assets/Fotos/laboralSeis.jpeg'
+import laboralSete from '../assets/Fotos/laboralSete.jpeg'
+import laboralOito from '../assets/Fotos/laboralumOito.jpeg'
+import laboralNove from '../assets/Fotos/laboralumNove.jpeg'
 
 // Substitua pelos imports reais das suas fotos
 const photos = [
-  { src: 'https://placehold.co/600x400/5cb330/white?text=Aula+1', alt: 'Sessão de ginástica laboral' },
-  { src: 'https://placehold.co/600x400/1b75bb/white?text=Aula+2', alt: 'Avaliação ergonômica' },
-  { src: 'https://placehold.co/600x400/f7931e/white?text=Aula+3', alt: 'Palestra corporativa' },
-  { src: 'https://placehold.co/600x400/5cb330/white?text=Aula+4', alt: 'Exercícios em grupo' },
-  { src: 'https://placehold.co/600x400/1b75bb/white?text=Aula+5', alt: 'Treinamento postural' },
-  { src: 'https://placehold.co/600x400/f7931e/white?text=Aula+6', alt: 'Dinâmica corporativa' },
+  { src: laboralUm , alt: 'Sessão de ginástica laboral' },
+  { src: laboralDois , alt: 'Avaliação ergonômica' },
+  { src: laboralTres , alt: 'Palestra corporativa' },
+  { src: laboralQuatro , alt: 'Exercícios em grupo' },
+  { src: laboralCinco, alt: 'Treinamento postural' },
+  { src: laboralSeis, alt: 'Dinâmica corporativa' },
+  {src: laboralSete, alt: 'Dinâmica em grupo'},
+  {src: laboralOito, alt: "Grupo mais cinquenta"},
+  {src: laboralNove, alt: "Professora Ana mostrando exercício"} 
 ];
 
 export function Gallery() {

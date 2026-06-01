@@ -1,30 +1,33 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { cn } from '../lib/utils';
+import angelica from '../assets//comentarios/Angelica.jpeg'
+import monara from '../assets/comentarios/Monara.png'
+import juliaNunes from '../assets/comentarios/julia_nunes.png'
 
 // Substitua pelas fotos reais — podem ser imports de assets
 const testimonials = [
   {
-    name: 'Carla Mendonça',
-    role: 'Gerente de RH',
-    company: 'TechRecife',
-    photo: 'https://placehold.co/80x80/5cb330/white?text=CM',
-    text: 'A Ana transformou o clima da nossa empresa. Os colaboradores chegam mais dispostos, as queixas de dor nas costas reduziram 60% em 3 meses.',
+    name: 'Angelica Costa',
+    role: 'Setor Administrativo',
+    company: 'ATI- Agência de Tecnologia de Pernambuco',
+    photo: angelica ,
+    text: 'Participar do laboral com a professora Ana tem feito toda diferença na minha rotina de trabalho.Além dos exercícios e alongamentos, ela transmite alegria, energia e motivação em cada encontro. É incrível como alguns minutos de cuidado e descontração conseguem deixar o dia mais leve, produtivo e animado.',
     stars: 5,
   },
   {
-    name: 'Roberto Alves',
-    role: 'Diretor Administrativo',
-    company: 'Construtora Norte',
-    photo: 'https://placehold.co/80x80/1b75bb/white?text=RA',
-    text: 'Programa totalmente personalizado para nossa equipe de obras. Resultado visível na produtividade e na redução de afastamentos.',
+    name: 'Monara Almeida',
+    role: 'Setor Administrativo',
+    company: 'ATI- Agência de Tecnologia de Pernambuco',
+    photo: monara,
+    text: 'Desde que comecei a participar do laboral com a professora Ana, percebi uma grande melhora no meu dia a dia no trabalho. Os exercícios e alongamentos ajudam muito, mas o diferencial é a forma leve, divertida, participativa e motivadora com que ela conduz cada encontro. ',
     stars: 5,
   },
   {
     name: 'Fernanda Lima',
     role: 'Coordenadora de Pessoas',
     company: 'Grupo Saúde PE',
-    photo: 'https://placehold.co/80x80/f7931e/white?text=FL',
-    text: 'Profissional incrível, pontual e com metodologia comprovada. Já indicamos para outras empresas do grupo.',
+    photo: juliaNunes,
+    text: 'Tenho gostado bastante das aulas porque elas ajudam a quebrar a rotina de ficar sentado trabalhando o dia inteiro. Acho muito legal que, quando alguém está com alguma dor ou desconforto, ela procura passar exercícios específicos para ajudar naquela situação. Outro ponto que considero bacana é a cultura das palavras do dia, que sempre trazem mensagens positivas e boas energias para a gente, são pequenos momentos que deixam o dia mais leve.',
     stars: 5,
   },
 ];
@@ -67,7 +70,7 @@ export function Testimonials() {
         </div>
 
         {/* Cards */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 ">
           {testimonials.map((t, i) => (
             <div
               key={i}
@@ -82,7 +85,7 @@ export function Testimonials() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
 
-              <p className="text-vitalis-gray text-sm leading-relaxed">{t.text}</p>
+              <p className="text-vitalis-gray text-sm leading-relaxed h-[240px]">{t.text}</p>
 
               <Stars count={t.stars} />
 
@@ -91,11 +94,12 @@ export function Testimonials() {
                 <img
                   src={t.photo}
                   alt={t.name}
-                  className="w-11 h-11 rounded-full object-cover ring-2 ring-vitalis-green/20"
+                  className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover ring-2 ring-vitalis-green/20"
                 />
                 <div>
                   <p className="font-bold text-vitalis-dark text-sm">{t.name}</p>
-                  <p className="text-vitalis-gray text-xs">{t.role} · {t.company}</p>
+                  <p className="text-vitalis-gray text-xs">{t.company}</p>
+                  <p className="text-vitalis-gray text-xs">{t.role}</p>
                 </div>
               </div>
             </div>

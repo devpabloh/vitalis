@@ -30,7 +30,7 @@ The GitHub Actions pipeline (`.github/workflows/pipeline.yaml`) runs lint → un
 
 ## Architecture
 
-Single-page landing site for **Vitalis** (corporate health/fitness). No router — `App.tsx` renders all sections in order as a vertical stack.
+Single-page landing site for **Vitalis** (corporate health/fitness). No router — `App.tsx` renders all sections in order: `Header → Hero → Stats → About → Services → Gallery → Videos → Testimonials → Process → Contact → Footer → FloatingContact`.
 
 **State management:** React Context API only. Theme (light/dark) is the only global state:
 
@@ -46,7 +46,13 @@ Single-page landing site for **Vitalis** (corporate health/fitness). No router �
 - *Tailwind inline*: apply Tailwind opacity/translate classes conditionally via `cn()` based on `isVisible` (e.g., `Stats.tsx`)
 - *CSS class toggle*: add `.reveal`, `.reveal-left`, or `.reveal-right` to the element and add `.visible` when `isVisible` is true (e.g., `About.tsx`). These classes and their `.visible` transitions are defined in `index.css`
 
-**Static content:** All business data (phone, email, stats, etc.) lives in `src/data/info.json`. Import from there rather than hardcoding.
+**Static content:** Business metadata (phone, email, stats, CREF, etc.) lives in `src/data/info.json` — import from there rather than hardcoding. Exception: Gallery photos, Videos list, and Testimonials content are defined inline in their respective component files, with images imported from `src/assets/Fotos/` and `src/assets/comentarios/`.
+
+**Gallery and Videos patterns:**
+- `Gallery.tsx` — grid of imported JPEG images with a built-in lightbox (`selected` state holds the enlarged image src; clicking the overlay clears it).
+- `Videos.tsx` — YouTube card grid; clicking a thumbnail sets `playing` state to the video ID and swaps the `<img>` thumbnail for an `<iframe>` embed (`autoplay=1`). Thumbnails are fetched from `https://img.youtube.com/vi/{id}/maxresdefault.jpg`.
+
+**Nav links** (defined in `Header.tsx`) only cover `#inicio`, `#sobre`, `#servicos`, `#como-funciona`, and `#contato`. The Gallery, Videos, and Testimonials sections have their own IDs (`#galeria`, `#videos`, `#depoimentos`) but are not in the main nav.
 
 **Styling:** Tailwind CSS v4 via `@tailwindcss/vite`. Brand tokens (`--color-vitalis-green`, `--color-vitalis-orange`, etc.) are defined in the `@theme` block in `src/index.css`. Additional CSS utilities defined there: `.gradient-text` and `.gradient-text-warm` for gradient text effects; `.animate-float` and `.animate-float-slow` for infinite float animations; `.hero-enter` for the Hero section entrance animation. Use `cn()` from `src/lib/utils.ts` (wraps `clsx` + `tailwind-merge`) for conditional class composition.
 
