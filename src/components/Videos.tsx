@@ -4,21 +4,21 @@ import { cn } from '../lib/utils';
 
 const videos = [
   {
-    id: 'dQw4w9WgXcQ', // substitua pelos IDs reais do YouTube
+    id: 'DWREuKVA_9c', // substitua pelos IDs reais do YouTube
     title: 'Ginástica Laboral para Escritório',
     duration: '8 min',
     category: 'Iniciante',
     categoryColor: 'bg-vitalis-green/10 text-vitalis-green',
   },
   {
-    id: 'dQw4w9WgXcQ',
+    id: 'I1EP0LVr8rE',
     title: 'Exercícios para Coluna e Postura',
     duration: '12 min',
     category: 'Intermediário',
     categoryColor: 'bg-vitalis-orange/10 text-vitalis-orange',
   },
   {
-    id: 'dQw4w9WgXcQ',
+    id: 'frDzQTfhxoQ',
     title: 'Alongamento para Home Office',
     duration: '6 min',
     category: 'Iniciante',
