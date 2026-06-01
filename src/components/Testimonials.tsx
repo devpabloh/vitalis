@@ -11,7 +11,7 @@ const testimonials = [
     role: 'Setor Administrativo',
     company: 'ATI- Agência de Tecnologia de Pernambuco',
     photo: angelica ,
-    text: 'Participar do laboral com a professora Ana tem feito toda diferença na minha rotina de trabalho.Além dos exercícios e alongamentos, ela transmite alegria, energia e motivação em cada encontro. É incrível como alguns minutos de cuidado e descontração conseguem deixar o dia mais leve, produtivo e animado.',
+    text: 'Participar do laboral com a professora Ana tem feito toda diferença na minha rotina de trabalho. Além dos exercícios e alongamentos, ela transmite alegria, energia e motivação em cada encontro. É incrível como alguns minutos de cuidado e descontração conseguem deixar o dia mais leve, produtivo e animado.',
     stars: 5,
   },
   {
@@ -23,9 +23,9 @@ const testimonials = [
     stars: 5,
   },
   {
-    name: 'Fernanda Lima',
-    role: 'Coordenadora de Pessoas',
-    company: 'Grupo Saúde PE',
+    name: 'Júlia Nunes',
+    role: 'Scrum Master',
+    company: 'ATI - Agência de Tecnologia de Pernambuco',
     photo: juliaNunes,
     text: 'Tenho gostado bastante das aulas porque elas ajudam a quebrar a rotina de ficar sentado trabalhando o dia inteiro. Acho muito legal que, quando alguém está com alguma dor ou desconforto, ela procura passar exercícios específicos para ajudar naquela situação. Outro ponto que considero bacana é a cultura das palavras do dia, que sempre trazem mensagens positivas e boas energias para a gente, são pequenos momentos que deixam o dia mais leve.',
     stars: 5,
