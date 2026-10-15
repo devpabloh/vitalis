@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 npm run dev          # start dev server at http://localhost:5173
 npm run build        # type-check then bundle for production
+npm run preview      # serve the production build locally
 npm run lint         # ESLint
 npm run format       # Prettier (write)
 npm run test         # Vitest (watch mode)
@@ -35,7 +36,7 @@ Single-page landing site for **Vitalis** (corporate health/fitness). No router �
 **State management:** React Context API only. Theme (light/dark) is the only global state:
 
 - `src/contexts/theme/themeContext.tsx` — `ThemeContext`, `Theme`, and `ThemeContextType` types
-- `src/providers/ThemeProvider.tsx` — `ThemeProviders`; syncs theme to `document.body.className` via `useEffect`, which activates the `body.light` / `body.dark` CSS rules in `index.css`
+- `src/providers/ThemeProvider.tsx` — `ThemeProviders`; syncs theme to `document.body.className` via `useEffect`. Currently only `body.light` styles are defined in `index.css` — dark mode infrastructure exists but `body.dark` CSS rules have not been implemented yet.
 - `src/hook/useTheme.ts` — wraps `useContext(ThemeContext)` with a guard; **always use this hook**, never consume `ThemeContext` directly
 
 **Hooks:**
