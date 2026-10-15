@@ -11,6 +11,8 @@ interface ContactItem {
   external?: boolean;
 }
 
+console.log(info.instagram)
+
 const contactInfo: ContactItem[] = [
   { icon: '📧', label: 'Email', value: info.email, href: info.linkEmail },
   { icon: '📱', label: 'WhatsApp', value: info.whatsapp, href: info.linkWhatsapp, external: true },
@@ -19,6 +21,8 @@ const contactInfo: ContactItem[] = [
   { icon: '⏰', label: 'Horário', value: 'Seg–Sex: 8h–18h' },
 ];
 
+console.log(contactInfo[2].value)
+
 const inputClass =
   'w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-vitalis-dark placeholder-vitalis-gray/50 outline-none focus:border-vitalis-green focus:ring-2 focus:ring-vitalis-green/15 transition-all bg-white';
 
@@ -26,7 +30,7 @@ export function Contact() {
   const { ref, isVisible } = useScrollAnimation<HTMLElement>();
   const [sent, setSent] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();
     setSent(true);
   }
